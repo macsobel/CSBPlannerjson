@@ -1,0 +1,356 @@
+[
+  {
+    "id": "bluebird-all-american",
+    "manufacturer": "Blue Bird",
+    "model": "All-American",
+    "busType": "Type D",
+    "priceRange": {
+      "min": 374939,
+      "max": 555608,
+      "note": "AZ-WA state contracts 2024-25"
+    },
+    "gvwr": 36200,
+    "dimensions": {
+      "length": 489,
+      "width": 96,
+      "height": 123
+    },
+    "passengerCapacity": 84,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "InCharge ICE chargers, Tellus, Heliox",
+    "knownCompatibleEVSE": "AC: InCharge ICE-80, ClipperCreek Level 2 (30-100A units), BTC Power Level 2 (80A), JuiceBox Level 2 (80A), Tellus Level 2 (80A) | DC: InCharge ICE-30, ICE-60, ICE-120, Tellus 30kW 60kW 120kW, Efacec QCBus 150, ABB HVC150, BTCPower 360kW, Heliox Fast DC 25/40/50/150kW, Chargepoint CPE250 50kW",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 120
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 194,
+      "usableKwh": 170
+    },
+    "range": {
+      "nameplate": null,
+      "usable": 150
+    },
+    "minStateOfCharge": 0,
+    "minStateOfChargeNote": "0%",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "9 hours",
+        "dc30kw": "5-6 hours",
+        "dcfc120kw": "1.5 - 2 hours"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "7 hours",
+        "dc30kw": "4.5 - 5 hours",
+        "dcfc120kw": "1 - 1.5 hours"
+      }
+    },
+    "chargePortLocation": "Rear of bus/front passenger side",
+    "peakHorsepower": 317,
+    "peakKw": 235,
+    "electricDrivetrain": "Accelera",
+    "electricMotor": "Dana",
+    "transmission": "None (direct drive)",
+    "brakes": "Air Drum or Disc",
+    "heatType": "Electric resistance",
+    "batteryPreconditioning": true,
+    "adaLift": "Lift (right side mid mount only)",
+    "undercarriageStorage": "Double door left hand mid-mount luggage box (20.84\"H X 16.63\"D X 100.00\"L) 20.00 CU.FT.",
+    "deliveryTime": "6-12 months",
+    "warranty": {
+      "battery": "8 years - unlimited miles / 390,000kWh discharge (Accelera)",
+      "drivetrain": "5 years/100,000 miles (Accelera)",
+      "chassis": "Standard Blue Bird chassis warranty (5 years or more)",
+      "additional": "Additional extended warranties available (body)"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "ride-type-d",
+    "manufacturer": "RIDE",
+    "model": "Type D",
+    "busType": "Type D",
+    "priceRange": {
+      "min": 408000,
+      "max": 478481,
+      "note": "ME-NY state contracts 2024-25"
+    },
+    "gvwr": 39680,
+    "dimensions": {
+      "length": 484.2,
+      "width": 101.6,
+      "height": 133.5
+    },
+    "passengerCapacity": 81,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "None",
+    "knownCompatibleEVSE": "All chargers available on the market",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19,
+      "dcfc": 65
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 255,
+      "usableKwh": null
+    },
+    "range": {
+      "nameplate": 155,
+      "usable": null
+    },
+    "minStateOfCharge": null,
+    "minStateOfChargeNote": "Not provided",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "13.75 - 19 hr",
+        "dc30kw": "9 hr",
+        "dcfc60kw": "4.5 hr"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "10.75 – 15.25 hr",
+        "dc30kw": "7 hr",
+        "dcfc60kw": "3.5 hr"
+      }
+    },
+    "chargePortLocation": "Curbside rear/front",
+    "peakHorsepower": 402,
+    "peakKw": 300,
+    "electricDrivetrain": "BYD",
+    "electricMotor": "BYD",
+    "transmission": "None (direct drive)",
+    "brakes": "Front/rear air disc, EBS + EBC",
+    "heatType": "Electric resistance or diesel",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes, customizable",
+    "undercarriageStorage": "2 compartments, 1 on each side; 35 *33 *16 inches (36 cubic ft)",
+    "deliveryTime": "10-14 months",
+    "warranty": {
+      "battery": "12 years/unlimited miles",
+      "drivetrain": "5 years/250,000 miles",
+      "chassis": "12 years/500,000 miles",
+      "additional": "Extended warranty available upon request. Purpose-built; UV Disinfectant Sanitation Options; 20% gradability from start"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "greenpower-beast",
+    "manufacturer": "GreenPower",
+    "model": "BEAST",
+    "busType": "Type D",
+    "priceRange": {
+      "min": 405699,
+      "max": 441000,
+      "note": "WV-AZ state contracts 2024-25"
+    },
+    "gvwr": 42990,
+    "dimensions": {
+      "length": 480,
+      "width": 102,
+      "height": 138.5
+    },
+    "passengerCapacity": 90,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "In Charge; Nuvve; Francis Energy",
+    "knownCompatibleEVSE": "In Charge, Nuvve, ABB, ChargePoint, Blink, ClipperCreek",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19,
+      "dcfc": 85
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 194,
+      "usableKwh": 164.5
+    },
+    "range": {
+      "nameplate": 140,
+      "usable": 110
+    },
+    "minStateOfCharge": 15,
+    "minStateOfChargeNote": "Bus derates at 15% where the speed is limited to 40 mph",
+    "batteryThermalManagement": "PTC for heating, liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19kw": "10.5 hours",
+        "dc30kw": "7.2 hours",
+        "dcfc60kw": "3.25 hours",
+        "wireless60kw": "3.5 hours"
+      },
+      "twentyToFull": {
+        "level2_19kw": "9 hours",
+        "dc30kw": "5.75 hours",
+        "dcfc60kw": "≤2.85 hours",
+        "wireless60kw": "≤2.85 hours"
+      }
+    },
+    "chargePortLocation": "Driverside rear (Additional locations optional)",
+    "peakHorsepower": 470,
+    "peakKw": 350,
+    "electricDrivetrain": "GreenPower Motor Co",
+    "electricMotor": "DANA tm4",
+    "transmission": "None (direct drive)",
+    "brakes": "Full ABS disk brakes",
+    "heatType": "75,000 BTU/h, front, rear, electric resistance",
+    "batteryPreconditioning": true,
+    "adaLift": "N/A",
+    "undercarriageStorage": "Full pass-through storage compartment 141 cubic ft",
+    "deliveryTime": "9-11 months",
+    "warranty": {
+      "battery": "8 years/200,000 miles",
+      "drivetrain": "5 years/100,000 miles",
+      "chassis": "3 years",
+      "additional": "Extended battery, motor, and bumper-to-bumper warranties are also available"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "greenpower-mega-beast",
+    "manufacturer": "GreenPower",
+    "model": "Mega BEAST",
+    "busType": "Type D",
+    "priceRange": {
+      "min": null,
+      "max": null,
+      "note": "Data not available"
+    },
+    "gvwr": 42990,
+    "dimensions": {
+      "length": 480,
+      "width": 102,
+      "height": 138.5
+    },
+    "passengerCapacity": 90,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "In Charge; Nuvve; Francis Energy",
+    "knownCompatibleEVSE": "In Charge, Nuvve, ABB, ChargePoint, Blink, ClipperCreek",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19,
+      "dcfc": 85
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 387,
+      "usableKwh": 329
+    },
+    "range": {
+      "nameplate": 300,
+      "usable": 234
+    },
+    "minStateOfCharge": 15,
+    "minStateOfChargeNote": "Bus derates at 15% where the speed is limited to 40 mph",
+    "batteryThermalManagement": "PTC for heating, liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19kw": "20.5 hours",
+        "dc30kw": "13 hours",
+        "dcfc60kw": "7 hours",
+        "wireless60kw": "7 hours"
+      },
+      "twentyToFull": {
+        "level2_19kw": "17 hours",
+        "dc30kw": "11 hours",
+        "dcfc60kw": "6 hours",
+        "wireless60kw": "6 hours"
+      }
+    },
+    "chargePortLocation": "Driverside rear (Additional locations optional)",
+    "peakHorsepower": 470,
+    "peakKw": 350,
+    "electricDrivetrain": "GreenPower Motor Co",
+    "electricMotor": "DANA tm4",
+    "transmission": "None (direct drive)",
+    "brakes": "Full ABS disk brakes",
+    "heatType": "75,000 BTU/h, front, rear, electric resistance",
+    "batteryPreconditioning": true,
+    "adaLift": "N/A",
+    "undercarriageStorage": "Full pass-through storage compartment 69 cubic ft",
+    "deliveryTime": "9-11 months",
+    "warranty": {
+      "battery": "8 years/200,000 miles",
+      "drivetrain": "5 years/100,000 miles",
+      "chassis": "3 years",
+      "additional": "Extended battery, motor, and bumper-to-bumper warranties are also available"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "envirotech-type-d",
+    "manufacturer": "Envirotech Vehicles",
+    "model": "Type D",
+    "busType": "Type D",
+    "priceRange": {
+      "min": null,
+      "max": null,
+      "note": "Data not available"
+    },
+    "gvwr": 42990,
+    "dimensions": {
+      "length": null,
+      "width": 102,
+      "height": 139
+    },
+    "passengerCapacity": 84,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "Not provided",
+    "knownCompatibleEVSE": "Not provided",
+    "maxVehicleAcceptanceRate": {
+      "level2": null,
+      "dcfc": null
+    },
+    "bidirectionalCapable": null,
+    "battery": {
+      "nameplateKwh": 192.6,
+      "usableKwh": null
+    },
+    "range": {
+      "nameplate": 150,
+      "usable": null
+    },
+    "minStateOfCharge": null,
+    "minStateOfChargeNote": "Not provided",
+    "batteryThermalManagement": "Not provided",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "~10 hours",
+        "dcfc50kw": "~3.5 hr"
+      },
+      "twentyToFull": null
+    },
+    "chargePortLocation": "Not provided",
+    "peakHorsepower": null,
+    "peakKw": null,
+    "electricDrivetrain": "DANA tm4",
+    "electricMotor": "DANA tm4",
+    "transmission": "None (direct drive)",
+    "brakes": "Bendix/Knorr - Air Disk Brakes front and rear with ABS",
+    "heatType": "88,700 BTU heating, PTC under-seat radiator coolant heating system",
+    "batteryPreconditioning": null,
+    "adaLift": "Optional",
+    "undercarriageStorage": null,
+    "deliveryTime": "Not provided",
+    "warranty": {
+      "battery": "Not provided",
+      "drivetrain": "Not provided",
+      "chassis": "Not provided",
+      "additional": "Not provided"
+    },
+    "oemWebsite": ""
+  }
+]

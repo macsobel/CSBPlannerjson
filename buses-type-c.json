@@ -1,0 +1,312 @@
+[
+  {
+    "id": "bluebird-vision",
+    "manufacturer": "Blue Bird",
+    "model": "Blue Bird Vision",
+    "busType": "Type C",
+    "priceRange": {
+      "min": 346546,
+      "max": 524190,
+      "note": "AZ-WA state contracts 2024-25"
+    },
+    "gvwr": 33000,
+    "dimensions": {
+      "length": 477,
+      "width": 96,
+      "height": 123
+    },
+    "passengerCapacity": 77,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "InCharge ICE chargers, Tellus, Heliox",
+    "knownCompatibleEVSE": "AC: InCharge ICE-80, Nuvve PowerPort, ClipperCreek Level 2 (30-100A units), BTC Power Level 2 (80A), JuiceBox Level 2 (80A), Tellus Level 2 (80A) | DC: InCharge ICE-30, ICE-60, ICE-120, Tellus 30kW 60kW 120kW, Efacec QCBus 150, ABB HVC150, BTCPower 360kW, Heliox Fast DC 25/40/50/150kW, Chargepoint CPE250 50kW",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 120
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 194,
+      "usableKwh": 170
+    },
+    "range": {
+      "nameplate": null,
+      "usable": 150
+    },
+    "minStateOfCharge": 0,
+    "minStateOfChargeNote": "0%",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "9 hours",
+        "dc30kw": "5-6 hours",
+        "dcfc120kw": "1.5 - 2 hours"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "7 hours",
+        "dc30kw": "4.5 - 5 hours",
+        "dcfc120kw": "1 - 1.5 hours"
+      }
+    },
+    "chargePortLocation": "Rear passenger side / Front grille mounted",
+    "peakHorsepower": 316,
+    "peakKw": 235,
+    "electricDrivetrain": "Accelera",
+    "electricMotor": "Dana",
+    "transmission": "None (direct drive)",
+    "brakes": "Air disc or drum; Hydraulic Disc",
+    "heatType": "Electric resistance (diesel supplemental heat option)",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes, right side rear mount only",
+    "deliveryTime": "6-12 months",
+    "warranty": {
+      "battery": "Extended range battery: 8 years / unlimited miles / 390,000kWh discharge (Accelera)",
+      "drivetrain": "5 years/100,000 miles (Accelera)",
+      "chassis": "Standard Blue Bird chassis warranty (5 years or more)",
+      "additional": "Additional extended warranties available (body)"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "ride-type-c",
+    "manufacturer": "RIDE",
+    "model": "Type C",
+    "busType": "Type C",
+    "priceRange": {
+      "min": 338616,
+      "max": 419400,
+      "note": "NY-WA state contracts 2024-25"
+    },
+    "gvwr": 35000,
+    "dimensions": {
+      "length": 456,
+      "width": 96,
+      "height": 124
+    },
+    "passengerCapacity": 72,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "None",
+    "knownCompatibleEVSE": "All chargers available on the market",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 110
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "options": [
+        {
+          "nameplateKwh": 188,
+          "range": 115
+        },
+        {
+          "nameplateKwh": 282,
+          "range": 170
+        }
+      ]
+    },
+    "range": {
+      "nameplate": 115,
+      "nameplate2": 170,
+      "note": "Depends on battery option"
+    },
+    "minStateOfCharge": 20,
+    "minStateOfChargeNote": "Derate mode activates at 20%",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "188kwh": {
+          "level2_19_2kw": "10 - 14 hr",
+          "dc30kw": "7 hr",
+          "dcfc60kw": "3.5 hr"
+        },
+        "282kwh": {
+          "level2_19_2kw": "15 - 21 hr",
+          "dc30kw": "10 hr",
+          "dcfc60kw": "5 hr"
+        }
+      },
+      "twentyToFull": {
+        "188kwh": {
+          "level2_19_2kw": "8 – 11.25 hr",
+          "dc30kw": "5.5 hr",
+          "dcfc60kw": "2.75 hr"
+        },
+        "282kwh": {
+          "level2_19_2kw": "12 - 17 hr",
+          "dc30kw": "8 hr",
+          "dcfc60kw": "4 hr"
+        }
+      }
+    },
+    "chargePortLocation": "Curbside rear/front",
+    "peakHorsepower": 348,
+    "peakKw": 260,
+    "electricDrivetrain": "BYD",
+    "electricMotor": "BYD",
+    "transmission": "2-speed",
+    "brakes": "Front/rear air disc, EBS + ESC",
+    "heatType": "Electric resistance or diesel",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes, customizable",
+    "deliveryTime": "10-14 months",
+    "warranty": {
+      "battery": "12 years/unlimited miles",
+      "drivetrain": "5 years/250,000 miles",
+      "chassis": "12 years/500,000 miles",
+      "additional": "Extended warranty available upon request. Purpose-built; UV Disinfectant Sanitation Options; 20% gradability from start"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "icbus-ce-series",
+    "manufacturer": "IC Bus/Navistar",
+    "model": "Electric CE Series / PB11E",
+    "busType": "Type C",
+    "priceRange": {
+      "min": 330100,
+      "max": 479096,
+      "note": "GA-FL state contracts 2024-25"
+    },
+    "gvwr": 35000,
+    "dimensions": {
+      "length": 474.9,
+      "width": 96,
+      "height": 123
+    },
+    "passengerCapacity": 78,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "InCharge",
+    "knownCompatibleEVSE": "ICE 80AC, ICE 30, ICE 60, ICE 120, ICE 180 (Incompatible with anything that does not output at least 700 volts)",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 125
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "options": [
+        {
+          "nameplateKwh": 210,
+          "usableKwh": 187,
+          "range": 135
+        },
+        {
+          "nameplateKwh": 315,
+          "usableKwh": 276,
+          "range": 200
+        }
+      ]
+    },
+    "range": {
+      "nameplate": 135,
+      "nameplate2": 200,
+      "note": "Depends on battery option"
+    },
+    "minStateOfCharge": 10,
+    "minStateOfChargeNote": "10%",
+    "batteryThermalManagement": "Liquid cooled (set to maintain 55 degrees F battery temp)",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "8 hours",
+        "dcfc60kw": "3 hours"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "6.4 hours",
+        "dcfc60kw": "2.4 hours"
+      }
+    },
+    "chargePortLocation": "Front right side — optional rear right side",
+    "peakHorsepower": 342,
+    "peakKw": 255,
+    "electricDrivetrain": "IC Bus / Navistar",
+    "electricMotor": "DANA TM4 SUMO-MD",
+    "transmission": "None (direct drive)",
+    "brakes": "AIR DISC (w/ ESC and ABS) Optional hydraulic brakes",
+    "heatType": "10kWh electric resistance (optional diesel). Standard Electric Base Body Heat System: Three (3) x 8 kW heaters. Optional additional 45,000 BTU Webasto Scholastic fuel fired heater available w/15 gallon tank",
+    "batteryPreconditioning": false,
+    "adaLift": "Yes, left rear",
+    "deliveryTime": "7–11 months",
+    "warranty": {
+      "battery": "8 years/175,000 miles",
+      "drivetrain": "5 years/100,000 miles",
+      "chassis": "Standard IC Bus chassis warranty (5 years or more); basic chassis warranty is 1 year",
+      "additional": "Extended Service contracts available upon request, including preventative maintenance and wear item coverage bundles"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "thomas-jouley",
+    "manufacturer": "Thomas Built Buses",
+    "model": "Saf-T-Liner C2 Jouley",
+    "busType": "Type C",
+    "priceRange": {
+      "min": 355000,
+      "max": 529085,
+      "note": "ME-OH state contracts 2024-25"
+    },
+    "gvwr": 33000,
+    "dimensions": {
+      "length": 396,
+      "width": 96,
+      "height": 144
+    },
+    "passengerCapacity": 81,
+    "chargerConnector": {
+      "level2": null,
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "None",
+    "knownCompatibleEVSE": "Several brands and models are compatible",
+    "maxVehicleAcceptanceRate": {
+      "level2": null,
+      "dcfc": 120
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 246,
+      "usableKwh": 219
+    },
+    "range": {
+      "nameplate": 167,
+      "usable": 150
+    },
+    "minStateOfCharge": 18,
+    "minStateOfChargeNote": "18%",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "dc30kw": "8 hours",
+        "dcfc60kw": "3.4 hours"
+      },
+      "twentyToFull": {
+        "dc30kw": "6.5 hours",
+        "dcfc60kw": "2.7 hours"
+      }
+    },
+    "chargePortLocation": "Front passenger side— optional rear curbside",
+    "peakHorsepower": 335,
+    "peakKw": 290,
+    "electricDrivetrain": "Accelera 14Xe Powertrain (eAxle)",
+    "electricMotor": "Integrated into the eAxle",
+    "transmission": "2-speed",
+    "brakes": "Air Only",
+    "heatType": "Electric resistance",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes, front and rear",
+    "deliveryTime": "10-12 months",
+    "warranty": {
+      "battery": "8 years/175,000 miles/220,000 kWh discharge",
+      "drivetrain": "The warranty for the eAxle has not been released yet. DTNA and Accelera are still in discussions.",
+      "chassis": "3 years/50,000 miles",
+      "additional": "N/A"
+    },
+    "oemWebsite": ""
+  }
+]

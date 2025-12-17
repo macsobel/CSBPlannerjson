@@ -1,0 +1,462 @@
+[
+  {
+    "id": "ride-type-a",
+    "manufacturer": "RIDE",
+    "model": "Type A",
+    "busType": "Type A",
+    "buildType": "Non-cutaway",
+    "priceRange": {
+      "min": 330376,
+      "max": 330376,
+      "note": "VA state contract 2024-25"
+    },
+    "gvwr": 21500,
+    "dimensions": {
+      "length": 320.88,
+      "width": 96,
+      "height": 127.56
+    },
+    "passengerCapacity": 30,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "None",
+    "knownCompatibleEVSE": "All chargers available on the market",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 110
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 156.4,
+      "usableKwh": 140.76
+    },
+    "range": {
+      "nameplate": 120,
+      "usable": null
+    },
+    "minStateOfCharge": 20,
+    "minStateOfChargeNote": "Derate mode activates at 20%",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "8.5 - 11.75 hr",
+        "dc30kw": "5.5 hr",
+        "dcfc60kw": "2.75 hr"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "7 - 9 hr",
+        "dc30kw": "4.5 hr",
+        "dcfc60kw": "2.25 hr"
+      }
+    },
+    "chargePortLocation": "Curbside rear/front",
+    "peakHorsepower": 268,
+    "peakKw": 200,
+    "electricDrivetrain": "BYD",
+    "electricMotor": "BYD",
+    "transmission": "None (direct drive)",
+    "brakes": "Front/rear air disc, EBS + EBC",
+    "heatType": "Electric resistance or diesel",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes, customizable",
+    "deliveryTime": "10-14 months",
+    "warranty": {
+      "battery": "12 years/unlimited miles",
+      "drivetrain": "5 years/250,000 miles",
+      "chassis": "12 years/500,000 miles",
+      "additional": "Extended warranty available upon request. Purpose-built; UV Disinfectant Sanitation Options; 20% gradability from start"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "greenpower-nano-beast",
+    "manufacturer": "GreenPower",
+    "model": "Nano BEAST",
+    "busType": "Type A",
+    "buildType": "E-cutaway",
+    "priceRange": {
+      "min": 272299,
+      "max": 312161,
+      "note": "WV-WA state contracts 2024-25"
+    },
+    "gvwr": 14330,
+    "dimensions": {
+      "length": 300,
+      "width": 92,
+      "height": 125
+    },
+    "passengerCapacity": 24,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "In Charge, Nuvve, Francis Energy",
+    "knownCompatibleEVSE": "In Charge, Nuvve, ABB, ChargePoint, Blink, ClipperCreek",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19,
+      "dcfc": 65
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 118.2,
+      "usableKwh": 100.3
+    },
+    "range": {
+      "nameplate": 120,
+      "usable": 102
+    },
+    "minStateOfCharge": 15,
+    "minStateOfChargeNote": "Bus derates at 15% where the speed is limited to 40 mph",
+    "batteryThermalManagement": "PTC heating, liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19kw": "7 hours",
+        "dc30kw": "4.5 hours",
+        "dcfc60kw": "2 hours",
+        "wireless60kw": "2 hours"
+      },
+      "twentyToFull": {
+        "level2_19kw": "5.5 hours",
+        "dc30kw": "3.5 hours",
+        "dcfc60kw": "≤1.75 hours",
+        "wireless60kw": "≤1.75 hours"
+      }
+    },
+    "chargePortLocation": "Front driver's side",
+    "peakHorsepower": 201,
+    "peakKw": 150,
+    "electricDrivetrain": "GreenPower Motor Co",
+    "electricMotor": "DANA tm4",
+    "transmission": "None (direct drive)",
+    "brakes": "Hydraulic Disc (Front), Hydraulic Drum (Rear)",
+    "heatType": "39,239 BTU/h, front, rear, electric resistance",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes, curbside",
+    "deliveryTime": "6-9 months",
+    "warranty": {
+      "battery": "5 years/100,000 miles",
+      "drivetrain": "3 years/150,000 miles",
+      "chassis": "3 years/250,000 miles",
+      "additional": "Extended battery, motor, and bumper-to-bumper warranties are also available"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "microbird-g5",
+    "manufacturer": "Micro Bird",
+    "model": "Micro Bird G5",
+    "busType": "Type A",
+    "buildType": "New repower cutaway",
+    "priceRange": {
+      "min": 311367,
+      "max": 436978,
+      "note": "WV-WA state contracts 2024-25"
+    },
+    "gvwr": 14500,
+    "dimensions": {
+      "length": 283,
+      "width": 96,
+      "height": 116
+    },
+    "passengerCapacity": 30,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "None",
+    "knownCompatibleEVSE": "Compatible with all standard J1772 or CCS1 chargers",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 140
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "options": [
+        {
+          "nameplateKwh": 140,
+          "usableKwh": 140,
+          "range": 150
+        },
+        {
+          "nameplateKwh": 175,
+          "usableKwh": 175,
+          "range": 200
+        }
+      ]
+    },
+    "range": {
+      "nameplate": 150,
+      "nameplate2": 200,
+      "note": "Depends on battery option"
+    },
+    "minStateOfCharge": 20,
+    "minStateOfChargeNote": "Vehicle derates at 20% SOC, but still operable until 0% SOC",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "140kwh": {
+          "level2_19_2kw": "7.3 hours",
+          "dc30kw": "4.6 hours",
+          "dcfc140kw": "1.25 hours"
+        },
+        "175kwh": {
+          "level2_19_2kw": "9.1 hours",
+          "dc30kw": "5.8 hours",
+          "dcfc140kw": "1.5 hours"
+        }
+      },
+      "twentyToFull": {
+        "140kwh": {
+          "level2_19_2kw": "5.8 hours",
+          "dc30kw": "3.7 hours",
+          "dcfc140kw": "0.8 hours"
+        },
+        "175kwh": {
+          "level2_19_2kw": "7.3 hours",
+          "dc30kw": "4.6 hours",
+          "dcfc140kw": "1.25 hours"
+        }
+      }
+    },
+    "chargePortLocation": "Front grille, passenger side",
+    "peakHorsepower": 335,
+    "peakKw": 250,
+    "electricDrivetrain": "Ecotuned",
+    "electricMotor": "JJE",
+    "transmission": "None (direct drive)",
+    "brakes": "Original E-450 brake system",
+    "heatType": "Electric resistance",
+    "batteryPreconditioning": true,
+    "adaLift": "Yes",
+    "deliveryTime": "6-12 months",
+    "warranty": {
+      "battery": "8 years/100,000 miles; 85 MWh discharge",
+      "drivetrain": "5 years/60,000 miles",
+      "chassis": "Body (1 year/12,000 miles) and structure (5 years)",
+      "additional": "Additional extended warranties available (body)"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "motiva-epic4",
+    "manufacturer": "Motiva (Endera/Van-Con)",
+    "model": "EPIC4",
+    "busType": "Type A",
+    "buildType": "New repower cutaway",
+    "priceRange": {
+      "min": 318282,
+      "max": 322695,
+      "note": "WA state contract 2024-25"
+    },
+    "gvwr": null,
+    "dimensions": {
+      "length": null,
+      "width": null,
+      "height": null
+    },
+    "passengerCapacity": 21,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": "Motiv Energy chargers",
+    "knownCompatibleEVSE": "Compatible with all standard J1772 or CCS1 chargers",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 70
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "nameplateKwh": 127,
+      "usableKwh": 127
+    },
+    "range": {
+      "nameplate": 105,
+      "usable": 105
+    },
+    "minStateOfCharge": 0,
+    "minStateOfChargeNote": "0% (derating occurs at 5% but still operable)",
+    "batteryThermalManagement": "Direct refrigerant cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "~8 hours",
+        "dc30kw": "~5 hours",
+        "dcfc60kw": "2 hours"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "~5.5 hours",
+        "dc30kw": "~3.5 hours",
+        "dcfc60kw": "~1.5 hours"
+      }
+    },
+    "chargePortLocation": "Behind driver door",
+    "peakHorsepower": null,
+    "peakKw": null,
+    "electricDrivetrain": "Motiv Power Systems",
+    "electricMotor": null,
+    "transmission": "None (direct drive)",
+    "brakes": "Hydraulic",
+    "heatType": "Electric resistance",
+    "batteryPreconditioning": null,
+    "adaLift": "Yes, configurable to customer requirement",
+    "deliveryTime": "8-10 months (depending upon chassis availability and body builder schedules)",
+    "warranty": {
+      "battery": "5 years/100,000 miles",
+      "drivetrain": "3 years/50,000 miles",
+      "chassis": "Ford warranty (pass through)",
+      "additional": "Extended yearly battery and powertrain warranties are available"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "optimal-ev-e1",
+    "manufacturer": "Optimal-EV (Thomas Built Buses or Trans Tech)",
+    "model": "E1",
+    "busType": "Type A",
+    "buildType": "New repower cutaway",
+    "priceRange": {
+      "min": 264985,
+      "max": 328265,
+      "note": "IL-WA state contracts 2024-25"
+    },
+    "gvwr": 14500,
+    "dimensions": {
+      "length": null,
+      "width": null,
+      "height": null
+    },
+    "passengerCapacity": 30,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1"
+    },
+    "preferredEVSE": null,
+    "knownCompatibleEVSE": null,
+    "maxVehicleAcceptanceRate": {
+      "level2": null,
+      "dcfc": 70
+    },
+    "bidirectionalCapable": null,
+    "battery": {
+      "nameplateKwh": 113,
+      "usableKwh": null
+    },
+    "range": {
+      "nameplate": 125,
+      "usable": null
+    },
+    "minStateOfCharge": null,
+    "minStateOfChargeNote": null,
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "~8 hours",
+        "dcfcUnknown": ">2 hours"
+      },
+      "twentyToFull": null
+    },
+    "chargePortLocation": null,
+    "peakHorsepower": null,
+    "peakKw": null,
+    "electricDrivetrain": "JJE",
+    "electricMotor": null,
+    "transmission": "None (direct drive)",
+    "brakes": "4-wheel disc, ABS",
+    "heatType": null,
+    "batteryPreconditioning": null,
+    "adaLift": null,
+    "deliveryTime": null,
+    "warranty": {
+      "battery": "6 years/157,000 kWh of gross discharge throughput per battery pack (whichever comes first)",
+      "drivetrain": "5 years/150,000 miles",
+      "chassis": null,
+      "additional": "Battery leasing available. Bumper-to-bumper warranty: 3 years/36,000 miles"
+    },
+    "oemWebsite": ""
+  },
+  {
+    "id": "phoenix-z600",
+    "manufacturer": "Phoenix Motorcars (Pegasus Bus Company)",
+    "model": "Z-600 (Ford E-450 Superduty Chassis)",
+    "busType": "Type A",
+    "buildType": "New repower cutaway",
+    "priceRange": {
+      "min": 271355,
+      "max": 276814,
+      "note": "CA state contract 2024-25"
+    },
+    "gvwr": 14500,
+    "dimensions": {
+      "length": null,
+      "width": 96,
+      "height": null
+    },
+    "passengerCapacity": 24,
+    "chargerConnector": {
+      "level2": "J1772",
+      "level3": "CCS1",
+      "wireless": "Available (75kW)"
+    },
+    "preferredEVSE": "Charger Agnostic",
+    "knownCompatibleEVSE": "Chargetronix/Chargepoint/ABB/Loop/BTC/Clipper Creek/Fermata(older generations only)/InductEV (wireless charging)",
+    "maxVehicleAcceptanceRate": {
+      "level2": 19.2,
+      "dcfc": 100
+    },
+    "bidirectionalCapable": true,
+    "battery": {
+      "options": [
+        {
+          "nameplateKwh": 90,
+          "usableKwh": 90,
+          "range": 135
+        },
+        {
+          "nameplateKwh": 131,
+          "usableKwh": 121,
+          "range": 165
+        }
+      ]
+    },
+    "range": {
+      "nameplate": 135,
+      "nameplate2": 165,
+      "note": "Depends on battery option"
+    },
+    "minStateOfCharge": 15,
+    "minStateOfChargeNote": "Miles: 20, kWh: 13.5, SOC %: 15",
+    "batteryThermalManagement": "Liquid cooled",
+    "rechargeTime": {
+      "zeroToFull": {
+        "level2_19_2kw": "~5-7 hours",
+        "dc30kw": "~3.5-5 hours",
+        "dcfc60kw": "~2-2.5 hours"
+      },
+      "twentyToFull": {
+        "level2_19_2kw": "~4-6 hours",
+        "dc30kw": "~2.5-4 hours",
+        "dcfc60kw": "~1.5-2 hours"
+      }
+    },
+    "chargePortLocation": "Lefthand front fender",
+    "peakHorsepower": null,
+    "peakKw": null,
+    "electricDrivetrain": "Phoenix Motorcars Gen 4",
+    "electricMotor": null,
+    "transmission": "None (direct drive)",
+    "brakes": "Hydraulic (4-wheel disc)",
+    "heatType": "Electric heat pump",
+    "batteryPreconditioning": null,
+    "adaLift": "Yes, rear",
+    "deliveryTime": "12 months",
+    "warranty": {
+      "battery": "5 years/150,000 miles",
+      "drivetrain": "5 years/150,000 miles",
+      "chassis": "5 years/36,000 miles",
+      "additional": "Option to extend up to 8 years or additional mileage on a case to case basis"
+    },
+    "oemWebsite": ""
+  }
+]
