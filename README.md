@@ -5,6 +5,7 @@ A comprehensive web-based tool to help school districts plan their electric scho
 ## Features
 
 ### Route Planning
+
 - Add unlimited routes with detailed parameters:
   - Route distance (miles)
   - Passenger capacity requirements
@@ -15,12 +16,14 @@ A comprehensive web-based tool to help school districts plan their electric scho
   - Visual timeline of daily operations
 
 ### Climate-Aware Range Calculations
+
 - Automatic climate detection based on depot location
 - Applies winter derating for cold climates (30% reduction)
 - Adjustable terrain impact on range
 - Optional 5-year battery degradation consideration (10% reduction)
 
 ### Bus Compatibility Analysis
+
 - Filters all Type A, C, and D electric school buses
 - Checks passenger capacity requirements
 - Calculates effective range with all derating factors
@@ -34,6 +37,7 @@ A comprehensive web-based tool to help school districts plan their electric scho
   - Delivery times
 
 ### Intelligent Charger Optimization
+
 Four different charging scenarios to meet diverse needs:
 
 1. **Cost Optimized**: Minimizes upfront costs with Level 2 chargers
@@ -42,18 +46,21 @@ Four different charging scenarios to meet diverse needs:
 4. **With Redundancy**: Additional chargers for backup and maintenance
 
 Each scenario includes:
+
 - Equipment costs
 - Estimated installation costs
 - Total investment calculations
 - Detailed charger specifications and quantities
 
 ### Data Visualizations
+
 - Cost comparison charts (bus + infrastructure)
 - Range analysis vs. daily requirements
 - Daily route timeline visualization
 - Interactive Highcharts with export capabilities
 
 ### Data Export
+
 - Export complete analysis results as JSON
 - Includes all inputs, compatible buses, and recommendations
 
@@ -68,6 +75,7 @@ Each scenario includes:
 ## Data Sources
 
 All bus and charger data sourced from:
+
 - WRI's Electric School Bus U.S. Buyer's Guide 2025 (October 2025)
 - State contract pricing data from 2024-25
 - Manufacturer specifications
@@ -118,7 +126,7 @@ SchoolBusFinder/
 3. **Add Routes**: Click "Add Route" and fill in route details
    - Repeat for all daily routes
 4. **Calculate**: Click "Calculate Bus & Charger Recommendations"
-5. **Review Results**: 
+5. **Review Results**:
    - View compatible buses sorted by cost
    - Compare different charger scenarios
    - Analyze visualizations
@@ -139,6 +147,7 @@ SchoolBusFinder/
 ## Future Enhancements
 
 Potential additions:
+
 - Total Cost of Ownership (TCO) calculations
 - Electricity rate modeling
 - Grant funding integration
@@ -150,6 +159,7 @@ Potential additions:
 ## Disclaimer
 
 This tool provides estimates based on manufacturer specifications and industry data. Actual performance may vary based on:
+
 - Specific operating conditions
 - Driver behavior
 - Weather patterns
