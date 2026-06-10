@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Verification Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-left: 10px;
+        }
+        .status.pass {
+            background: #2e8540;
+            color: white;
+        }
+        .status.fail {
+            background: #cd2026;
+            color: white;
+        }
+        pre {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        h2 {
+            color: #0071bc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Electric School Bus Route Planner - Data Verification</h1>
+    
+    <div class="test-section">
+        <h2>1. Data File Loading <span class="status" id="loadStatus">Testing...</span></h2>
+        <div id="loadResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Bus Data Structure <span class="status" id="busStatus">Testing...</span></h2>
+        <div id="busResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Charger Data Structure <span class="status" id="chargerStatus">Testing...</span></h2>
+        <div id="chargerResults"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Sample Bus Details</h2>
+        <div id="sampleBus"></div>
+    </div>
+    
+    <div class="test-section">
+        <h2>5. Sample Charger Details</h2>
+        <div id="sampleCharger"></div>
+    </div>
+
+    <script>
+        let testResults = {
+            typeA: null,
+            typeC: null,
+            typeD: null,
+            chargers: null
+        };
+
+        async function runTests() {
+            try {
+                // Test 1: Load all data files
+                const [typeA, typeC, typeD, chargers] = await Promise.all([
+                    fetch('data/buses-type-a.json').then(r => r.json()),
+                    fetch('data/buses-type-c.json').then(r => r.json()),
+                    fetch('data/buses-type-d.json').then(r => r.json()),
+                    fetch('data/chargers.json').then(r => r.json())
+                ]);
+                
+                testResults = { typeA, typeC, typeD, chargers };
+                
+                document.getElementById('loadStatus').textContent = 'PASS';
+                document.getElementById('loadStatus').className = 'status pass';
+                document.getElementById('loadResults').innerHTML = `
+                    <p>✅ Type A Buses: ${typeA.length} loaded</p>
+                    <p>✅ Type C Buses: ${typeC.length} loaded</p>
+                    <p>✅ Type D Buses: ${typeD.length} loaded</p>
+                    <p>✅ Chargers: ${chargers.length} loaded</p>
+                    <p><strong>Total Buses: ${typeA.length + typeC.length + typeD.length}</strong></p>
+                `;
+                
+                // Test 2: Verify bus structure
+                const allBuses = [...typeA, ...typeC, ...typeD];
+                const requiredBusFields = ['id', 'manufacturer', 'model', 'busType', 'passengerCapacity', 'battery', 'range'];
+                const busValidation = allBuses.every(bus => 
+                    requiredBusFields.every(field => field in bus)
+                );
+                
+                if (busValidation) {
+                    document.getElementById('busStatus').textContent = 'PASS';
+                    document.getElementById('busStatus').className = 'status pass';
+                    document.getElementById('busResults').innerHTML = `
+                        <p>✅ All buses have required fields</p>
+                        <p>Required fields: ${requiredBusFields.join(', ')}</p>
+                    `;
+                } else {
+                    document.getElementById('busStatus').textContent = 'FAIL';
+                    document.getElementById('busStatus').className = 'status fail';
+                }
+                
+                // Test 3: Verify charger structure
+                const requiredChargerFields = ['id', 'chargingType', 'kw', 'priceRange'];
+                const chargerValidation = chargers.every(charger => 
+                    requiredChargerFields.every(field => field in charger)
+                );
+                
+                if (chargerValidation) {
+                    document.getElementById('chargerStatus').textContent = 'PASS';
+                    document.getElementById('chargerStatus').className = 'status pass';
+                    document.getElementById('chargerResults').innerHTML = `
+                        <p>✅ All chargers have required fields</p>
+                        <p>Required fields: ${requiredChargerFields.join(', ')}</p>
+                        <p>Charger types: ${[...new Set(chargers.map(c => c.chargingType))].join(', ')}</p>
+                    `;
+                } else {
+                    document.getElementById('chargerStatus').textContent = 'FAIL';
+                    document.getElementById('chargerStatus').className = 'status fail';
+                }
+                
+                // Test 4: Display sample bus
+                const sampleBus = allBuses[0];
+                document.getElementById('sampleBus').innerHTML = `
+                    <h3>${sampleBus.manufacturer} ${sampleBus.model}</h3>
+                    <pre>${JSON.stringify(sampleBus, null, 2)}</pre>
+                `;
+                
+                // Test 5: Display sample charger
+                const sampleCharger = chargers[0];
+                document.getElementById('sampleCharger').innerHTML = `
+                    <h3>${sampleCharger.chargingType} - ${sampleCharger.kw} kW</h3>
+                    <pre>${JSON.stringify(sampleCharger, null, 2)}</pre>
+                `;
+                
+            } catch (error) {
+                document.getElementById('loadStatus').textContent = 'FAIL';
+                document.getElementById('loadStatus').className = 'status fail';
+                document.getElementById('loadResults').innerHTML = `
+                    <p style="color: red;">❌ Error loading data: ${error.message}</p>
+                    <p>Make sure you're running this through a web server (e.g., python -m http.server 8000)</p>
+                `;
+            }
+        }
+        
+        runTests();
+    </script>
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric School Bus Planner</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/modules/xrange.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Electric School Bus Planner</h1>
+            <p class="subtitle">Plan your electric school bus fleet with confidence</p>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" id="breadcrumbNav">
+            <button class="breadcrumb-step" data-step="1" onclick="navigateToStep(1)">
+                <span class="step-number">1</span>
+                <span class="step-label">Assumptions</span>
+            </button>
+            <div class="breadcrumb-arrow">→</div>
+            <button class="breadcrumb-step" data-step="2" onclick="navigateToStep(2)" disabled>
+                <span class="step-number">2</span>
+                <span class="step-label">Schedules</span>
+            </button>
+            <div class="breadcrumb-arrow">→</div>
+            <button class="breadcrumb-step" data-step="3" onclick="navigateToStep(3)" disabled>
+                <span class="step-number">3</span>
+                <span class="step-label">Select Buses</span>
+            </button>
+            <div class="breadcrumb-arrow">→</div>
+            <button class="breadcrumb-step" data-step="4" onclick="navigateToStep(4)" disabled>
+                <span class="step-number">4</span>
+                <span class="step-label">Chargers</span>
+            </button>
+            <div class="breadcrumb-arrow">→</div>
+            <button class="breadcrumb-step" data-step="5" onclick="navigateToStep(5)" disabled>
+                <span class="step-number">5</span>
+                <span class="step-label">Results</span>
+            </button>
+        </nav>
+
+        <main>
+            <!-- PAGE 1: Fleet Configuration -->
+            <section class="wizard-page active" id="page1" data-page="1">
+                <div class="card">
+                    <h2>Step 1: Scenario Assumptions</h2>
+                    <p class="text-muted">Configure your depot location and battery assumptions</p>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="considerWeather">
+                                Estimate vehicle range from extreme hot and cold weather
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row" id="depotLocationContainer" style="display: none;">
+                        <div class="form-group">
+                            <label for="depotLocation">Depot Location (Address or Zip Code)</label>
+                            <input type="text" id="depotLocation" placeholder="Enter depot address or zip code">
+                            <small class="help-text">Used to determine climate conditions for range calculations</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="considerTerrain">
+                                Consider terrain impacts on range
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-row" id="terrainContainer" style="display: none;">
+                        <div class="form-group">
+                            <label for="terrainType">Terrain Type</label>
+                            <select id="terrainType">
+                                <option value="flat">Flat</option>
+                                <option value="rolling">Rolling Hills</option>
+                                <option value="mountainous">Mountainous</option>
+                            </select>
+                            <small class="help-text">Select the predominant terrain for your routes</small>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="batteryDegradation">
+                                Consider 5-year battery degradation (reduces range by ~10%)
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="depot-info" id="depotInfo" style="display: none;">
+                        <div class="info-badge">
+                            <span class="info-label">Climate Zone:</span>
+                            <span id="climateZone">--</span>
+                        </div>
+                        <div class="info-badge">
+                            <span class="info-label">Winter Range Derating:</span>
+                            <span id="winterDerating">--</span>
+                        </div>
+                    </div>
+
+                    <div class="wizard-actions">
+                        <button class="btn btn-large btn-primary" onclick="goToNextStep()">
+                            Continue to Bus Schedules →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 2: Bus Schedules -->
+            <section class="wizard-page" id="page2" data-page="2" style="display: none;">
+                <div class="card">
+                    <div class="section-header">
+                        <div>
+                            <h2>Step 2: Bus Schedules</h2>
+                            <p class="text-muted">Add all your bus schedules. Each schedule represents one physical bus with all its daily trips.</p>
+                        </div>
+                        <button class="btn btn-primary" id="addBusScheduleBtn">
+                            <span class="btn-icon">+</span> Add Bus Schedule
+                        </button>
+                    </div>
+
+                    <div id="busSchedulesList" class="bus-schedules-list">
+                        <!-- Bus schedules will be added dynamically -->
+                    </div>
+
+                    <div class="wizard-actions">
+                        <button class="btn btn-large btn-secondary" onclick="goToPreviousStep()">
+                            ← Back to Assumptions
+                        </button>
+                        <button class="btn btn-large btn-secondary" onclick="saveBusSchedulesToFile()">
+                            Save Bus Schedule
+                        </button>
+                        <button class="btn btn-large btn-secondary" onclick="document.getElementById('loadScheduleInput').click()">
+                            Load Bus Schedule
+                        </button>
+                        <input type="file" id="loadScheduleInput" style="display: none" accept=".json" onchange="loadBusSchedulesFromFile(this)">
+                        <button class="btn btn-large btn-primary" id="continueToSelectionBtn" onclick="goToNextStep()">
+                            Continue to Bus Selection →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 3: Bus Selection -->
+            <section class="wizard-page" id="page3" data-page="3" style="display: none;">
+                <div class="card">
+                    <h2>Step 3: Select Buses</h2>
+                    <p class="text-muted">Choose one compatible electric bus for each schedule</p>
+
+                    <div id="busSelectionContainer">
+                        <!-- Bus selection cards will be rendered here -->
+                    </div>
+
+                    <div class="wizard-actions">
+                        <button class="btn btn-large btn-secondary" onclick="goToPreviousStep()">
+                            ← Back to Schedules
+                        </button>
+                        <button class="btn btn-large btn-primary" id="continueToChargersBtn" onclick="goToNextStep()" disabled>
+                            Continue to Chargers →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 4: Charger Configuration -->
+            <section class="wizard-page" id="page4" data-page="4" style="display: none;">
+                <div class="card">
+                    <h2>Step 4: Choose Charger Scenario</h2>
+                    <p class="text-muted">Select the charging infrastructure approach that best fits your needs and budget</p>
+
+                    <div class="charger-scenarios-grid" id="chargerScenariosGrid">
+                        <!-- Charger scenario cards will be rendered here -->
+                    </div>
+
+                    <div class="wizard-actions">
+                        <button class="btn btn-large btn-secondary" onclick="goToPreviousStep()">
+                            ← Back to Bus Selection
+                        </button>
+                        <button class="btn btn-large btn-success" id="viewResultsBtn" onclick="goToNextStep()" disabled>
+                            View Final Results →
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PAGE 5: Results & Visualizations -->
+            <section class="wizard-page" id="page5" data-page="5" style="display: none;">
+                
+                <!-- Fleet Summary -->
+                <div class="card">
+                    <h2>Your Electric Bus Fleet Summary</h2>
+                    <div id="selectedFleetSummary" class="fleet-summary"></div>
+                </div>
+
+                <!-- Selected Buses Detail -->
+                <div class="card">
+                    <div class="section-header">
+                        <h2>Selected Buses</h2>
+                    </div>
+                    <div id="selectedBusesDetail" class="bus-results"></div>
+                </div>
+
+                <!-- Chosen Charger Scenario -->
+                <div class="card">
+                    <h2>Your Charging Infrastructure</h2>
+                    <div id="selectedChargerScenario"></div>
+                </div>
+
+                <!-- Cost Analysis Chart -->
+                <div class="card">
+                    <h2>Cost Analysis</h2>
+                    <div id="costChart" class="chart-container"></div>
+                </div>
+
+                <!-- Range Analysis Chart -->
+                <div class="card">
+                    <h2>Range Analysis</h2>
+                    <div id="rangeChart" class="chart-container"></div>
+                </div>
+
+                <!-- Charging Timeline Chart -->
+                <div class="card">
+                    <h2>Charging Timeline</h2>
+                    <div id="timelineChart" class="chart-container"></div>
+                </div>
+
+                <div class="wizard-actions">
+                    <button class="btn btn-large btn-primary" onclick="navigateToStep(4)">
+                        Change Charger Selection
+                    </button>
+                    <button class="btn btn-large btn-secondary" onclick="saveBusSchedulesToFile()">
+                        Save Bus Schedule
+                    </button>
+                    <button class="btn btn-large btn-secondary">
+                        Create Report PDF
+                    </button>
+                    <button class="btn btn-large btn-secondary" onclick="confirmStartOver()">
+                        Start Over
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Data sourced from WRI's Electric School Bus U.S. Buyer's Guide 2025</p>
+            <p>This tool provides estimates only. Consult with bus manufacturers and charging infrastructure providers for specific requirements.</p>
+        </footer>
+    </div>
+
+    <!-- Route Modal Template -->
+    <div id="busScheduleModal" class="modal" style="display: none;">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="modalTitle">Add Bus Schedule</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="busScheduleName">Bus Schedule Name*</label>
+                    <input type="text" id="busScheduleName" required placeholder="e.g., Bus #1 - Morning Routes">
+                    <small class="help-text">Give this bus a descriptive name</small>
+                </div>
+                
+                <hr style="margin: 1.5rem 0;">
+                
+                <h4 style="margin-bottom: 1rem;">Trips for This Bus</h4>
+                
+                <div id="modalTripsContainer">
+                    <!-- Trip forms will be rendered here dynamically with Add Trip button at bottom -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="cancelBusScheduleBtn">Cancel</button>
+                <button class="btn btn-primary" id="saveBusScheduleBtn">Save Bus Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
