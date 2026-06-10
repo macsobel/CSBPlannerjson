@@ -45,20 +45,21 @@ async function loadData() {
     try {
         console.log('Loading data files...');
         
+        // Load local data files from the `data/` folder
         const [typeA, typeC, typeD, chargers] = await Promise.all([
-            fetch('https://raw.githubusercontent.com/macsobel/CSBPlannerjson/refs/heads/main/buses-type-a.json').then(r => {
+            fetch('data/buses-type-a.json').then(r => {
                 if (!r.ok) throw new Error(`Failed to load Type A buses: ${r.status}`);
                 return r.json();
             }),
-            fetch('https://raw.githubusercontent.com/macsobel/CSBPlannerjson/refs/heads/main/buses-type-c.json').then(r => {
+            fetch('data/buses-type-c.json').then(r => {
                 if (!r.ok) throw new Error(`Failed to load Type C buses: ${r.status}`);
                 return r.json();
             }),
-            fetch('https://raw.githubusercontent.com/macsobel/CSBPlannerjson/refs/heads/main/buses-type-d.json').then(r => {
+            fetch('data/buses-type-d.json').then(r => {
                 if (!r.ok) throw new Error(`Failed to load Type D buses: ${r.status}`);
                 return r.json();
             }),
-            fetch('https://raw.githubusercontent.com/macsobel/CSBPlannerjson/refs/heads/main/chargers.json').then(r => {
+            fetch('data/chargers.json').then(r => {
                 if (!r.ok) throw new Error(`Failed to load chargers: ${r.status}`);
                 return r.json();
             })
