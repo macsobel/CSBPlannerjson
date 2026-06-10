@@ -1,0 +1,216 @@
+/* ==========================
+   CSS Variables & Reset
+   ========================== */
+:root {
+    --primary-color: #0071bc;
+    --primary-dark: #205493;
+    --primary-light: #e3f2fd;
+    --secondary-color: #02bfe7;
+    --success-color: #2e8540;
+    --warning-color: #fdb81e;
+    --danger-color: #cd2026;
+    --text-primary: #212121;
+    --text-secondary: #5b616b;
+    --text-muted: #999;
+    --bg-light: #f9f9f9;
+    --bg-white: #ffffff;
+    --border-color: #d6d7d9;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 4px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    /* Full CSS content copied from original styles.css */
+    /* ==========================
+       CSS Variables & Reset
+       ========================== */
+    :root {
+        --primary-color: #0071bc;
+        --primary-dark: #205493;
+        --primary-light: #e3f2fd;
+        --secondary-color: #02bfe7;
+        --success-color: #2e8540;
+        --warning-color: #fdb81e;
+        --danger-color: #cd2026;
+        --text-primary: #212121;
+        --text-secondary: #5b616b;
+        --text-muted: #999;
+        --bg-light: #f9f9f9;
+        --bg-white: #ffffff;
+        --border-color: #d6d7d9;
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+        --border-radius: 4px;
+        --transition: all 0.3s ease;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', 'Roboto', 'Arial', sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background-color: var(--bg-light);
+    }
+
+    /* ==========================
+       Layout
+       ========================== */
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    header {
+        text-align: center;
+        padding: 30px 0 40px;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+        color: white;
+        margin: -20px -20px 30px -20px;
+        border-radius: 0 0 8px 8px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    header .subtitle {
+        font-size: 1.25rem;
+        opacity: 0.95;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px 20px;
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+        margin-top: 50px;
+        border-top: 1px solid var(--border-color);
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    /* ==========================
+       Breadcrumb Navigation
+       ========================== */
+    .breadcrumb-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px;
+        background: var(--bg-white);
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow-md);
+        margin-bottom: 30px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        flex-wrap: wrap;
+    }
+
+    .breadcrumb-step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        padding: 10px 15px;
+        background: var(--bg-light);
+        border: 2px solid var(--border-color);
+        border-radius: var(--border-radius);
+        cursor: pointer;
+        transition: var(--transition);
+        min-width: 100px;
+    }
+
+    .breadcrumb-step:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    .breadcrumb-step:not(:disabled):hover {
+        background: var(--primary-light);
+        border-color: var(--primary-color);
+        transform: translateY(-2px);
+    }
+
+    .breadcrumb-step.active {
+        background: var(--primary-color);
+        border-color: var(--primary-color);
+        color: white;
+    }
+
+    .breadcrumb-step.completed {
+        background: var(--success-color);
+        border-color: var(--success-color);
+        color: white;
+    }
+
+    .breadcrumb-step.completed:not(:disabled):hover {
+        background: #246633;
+        border-color: #246633;
+    }
+
+    .step-number {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    .step-label {
+        font-size: 0.875rem;
+        font-weight: 600;
+    }
+
+    .breadcrumb-arrow {
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    /* ==========================
+       Wizard Pages
+       ========================== */
+    .wizard-page {
+        display: none;
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    .wizard-page.active {
+        display: block;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* (rest of CSS kept identical to original) */

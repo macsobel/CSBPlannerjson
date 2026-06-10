@@ -99,9 +99,11 @@ const CHARGER_REDUNDANCY_FACTOR = 0.20; // 20% extra chargers for redundancy
 ```
 SchoolBusFinder/
 ├── index.html              # Main application page
-├── styles.css              # All styling (mobile-responsive)
+├── assets/
+|   └── styles.css          # All styling (mobile-responsive)
 ├── app.js                  # Application logic and calculations
 ├── README.md               # This file
+├── docs/                   # Documentation (CONFIGURATION, QUICKSTART, etc.)
 └── data/
     ├── buses-type-a.json   # Type A bus specifications
     ├── buses-type-c.json   # Type C bus specifications
