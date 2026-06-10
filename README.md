@@ -11,8 +11,8 @@ A comprehensive web-based tool to help school districts plan their electric scho
   - Number of stops
   - Terrain type (flat, rolling hills, mountainous)
   - Route times and schedules
-- Edit and delete routes as needed
-- Visual timeline of daily operations
+  - Edit and delete routes as needed
+  - Visual timeline of daily operations
 
 ### Climate-Aware Range Calculations
 - Automatic climate detection based on depot location
