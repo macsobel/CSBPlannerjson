@@ -23,5 +23,3 @@ SchoolBusFinder/
     ├── buses-type-d.json   # 5 Type D bus models
     └── chargers.json       # 9 charger configurations
 ```
-
-... (file content unchanged)
